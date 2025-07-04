@@ -1,0 +1,409 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+body.dark-mode {
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+.header {
+  background: #fff;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+body.dark-mode .header {
+  background: #2c2c2c;
+}
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: inherit;
+}
+.section {
+  padding: 3rem 0;
+  border-bottom: 1px solid #ddd;
+}
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background: #eee;
+}
+body.dark-mode .footer {
+  background: #2c2c2c;
+}
+
+/* Variables CSS */
+:root {
+  --color-fondo: #f9f9f9;
+  --color-texto: #333;
+  --color-primario: #4e54c8;
+  --color-secundario: #8f94fb;
+  --espaciado: 1rem;
+  --radio: 12px;
+}
+
+body.dark-mode {
+  --color-fondo: #1e1e1e;
+  --color-texto: #f1f1f1;
+}
+
+/* Gradiente animado para secciones */
+.section {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+.section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, var(--color-primario), var(--color-secundario));
+  opacity: 0.05;
+  animation: rotar 20s linear infinite;
+  z-index: -1;
+}
+@keyframes rotar {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Botón con animación hover */
+button#toggleMode {
+  padding: 0.5rem 1rem;
+  background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
+  border: none;
+  border-radius: var(--radio);
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+button#toggleMode:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Tipografía moderna */
+h1, h2 {
+  font-family: 'Segoe UI', sans-serif;
+  letter-spacing: 1px;
+}
+p {
+  max-width: 600px;
+  margin-bottom: var(--espaciado);
+}
+
+/* Animación de entrada con scroll (usando JS más adelante) */
+.animado {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.animado.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Estilo para enlaces interactivos */
+a {
+  color: var(--color-primario);
+  text-decoration: none;
+  position: relative;
+}
+a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  background-color: var(--color-primario);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Media Queries para responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .nav a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+/* Variables secundarias */
+:root {
+  --primary: #DD946F ;
+  --secondary: rgb(255, 0, 0);
+  --terciarity: #e5ff00;
+}
+
+body {
+  font-family: Mulish;
+  font-size: 16px;
+}
+
+.background {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  padding: 2rem;
+  background-color: var(--terciarity);
+}
+
+.articles {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: center;
+  max-width: 75rem;
+  gap: 1.5rem;
+}
+
+.articles article {
+  max-width: 20rem;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  transition: all 0.4s ease-in-out;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.articles article a {
+  display: inline-flex;
+  color: var(--primary);
+  text-decoration: none;
+}
+
+.articles article h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.6rem;
+  color: var(--secondary);
+  transition: color 0.3s ease-out;
+}
+
+.articles article p {
+  margin: 0 0 1rem 0;
+  font-size: 1.0rem;
+  color: var(--secondary);
+  transition: color 0.3s ease-out;
+}
+
+.articles article img {
+  max-width: 100%;
+  transform-origin: center;
+  transition: transform 0.4s ease-in-out;
+}
+
+.article-preview {
+  padding: 1.5rem;
+  background: black;
+}
+
+.articles figure {
+  width: 100%;
+  height: 13rem;
+  overflow: hidden;
+}
+
+.articles figure img {
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+.articles article:hover img {
+  transform: scale(1.5); 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Sobre Mi centrado corregido */
+.carta1 {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center; /* CENTRADO TOTAL */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.carta1:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carta1 h3 {
+  margin-top: 2rem;
+}
+
+.carta1 ul {
+  padding-left: 0;               /* Quitar padding para centrar lista */
+  display: inline-block;         /* Que la lista ocupe solo lo que necesita */
+  list-style-position: inside;  /* Viñetas dentro */
+  text-align: left;              /* Que los items estén alineados a la izquierda */
+  margin: 0 auto;                /* Centrar lista horizontalmente */
+}
+
+.carta1 ul li {
+  margin-bottom: 0.4rem;         /* Espacio entre ítems */
+}
+
+.carta1 p {
+  text-align: center;
+}
+
+.carta2 {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 700px;
+  margin: 2rem auto;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.carta2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.carta2 h2 {
+  margin-bottom: 1rem;
+}
+
+.carta2 p {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 1rem auto;
+}
+
+.footer {
+  width: 100%;
+  min-height: 60px;               /* altura mínima para mejor visibilidad */
+  display: flex;                  /* uso flexbox */
+  justify-content: center;        /* centra horizontalmente */
+  align-items: center;            /* centra verticalmente */
+  background: #eee;
+  color: var(--color-texto);
+  font-size: 1rem;
+  font-weight: 500;
+  user-select: none;
+  box-sizing: border-box;
+  padding: 0 1rem;                /* algo de padding lateral */
+  text-align: center;             /* respaldo para texto centrado */
+}
+
+body.dark-mode .footer {
+  background: #2c2c2c;
+  color: var(--color-texto);
+}
+
+.carta3 {
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 700px;
+  margin: 2rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.carta3:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.carta3 form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.carta3 label {
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.carta3 input,
+.carta3 textarea {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: border-color 0.3s ease;
+}
+
+.carta3 input:focus,
+.carta3 textarea:focus {
+  outline: none;
+  border-color: var(--color-primario);
+  box-shadow: 0 0 8px var(--color-secundario);
+}
+
+.carta3 button {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(to right, var(--color-primario), var(--color-secundario));
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.carta3 button:hover {
+  background: linear-gradient(to right, var(--color-secundario), var(--color-primario));
+  transform: scale(1.05);
+}

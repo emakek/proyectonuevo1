@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portafolio</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="logo">
+        <img src="ekdevs2.ico" alt="Logo Ema Kek" class="logo-img" />
+      </div>
+      
+      <nav class="nav" id="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      
+      <button id="toggleMode" aria-label="Cambiar tema">🌓</button>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="section">
+      <div class="carta2">
+        <h2>Bienvenido a mi Portafolio</h2>
+          <p>
+          ¡Hola! Soy <strong>Emanuel Kek</strong>, un desarrollador web apasionado por la tecnología y el diseño funcional.
+          Comencé creando sitios con <strong>HTML, CSS y JavaScript</strong>, y con el tiempo he ido expandiendo mis habilidades
+          hacia frameworks modernos como <strong>React</strong>.
+          </p>
+          <p>
+            Me especializo en construir interfaces limpias, responsivas y orientadas a la experiencia del usuario. Este portafolio
+            refleja mi evolución como desarrollador y mi compromiso constante por mejorar. Explorá mis proyectos y descubrí
+            cómo transformo ideas en código.
+        </p>
+      </div>
+    </section>
+
+      <section id="sobre-mi" class="section">
+        <h2>Sobre Mí</h2>
+        <div class="galeria">
+          <div class="carta1">
+            <h3>Sobre Mí</h3>
+            <p>
+              Apasionado por la tecnología en sus variantes. Trabajé 3 años en reparación de dispositivos electrónicos y luego seguí perfeccionándome en este mundo.
+              En 2023 activamos programación de páginas y aplicaciones web.
+            </p>
+            <p>
+              Me encanta aprender y enfrentar nuevos desafíos. Siempre estoy buscando mejorar mis habilidades y aprender nuevas tecnologías.
+              Actualmente, me enfoco en el desarrollo de aplicaciones web con React, pero también disfruto explorar otras áreas como la inteligencia artificial y el diseño UX/UI.
+          </div>
+        </div>
+      </section>
+      <!-- ABOUT -->
+     <section class="menu section" id="proyectos">
+               <div class="container">
+                    <div class="row">
+
+                        <div class="centering">
+                            <div class="articles">
+                                <article>
+                                    <figure>
+                                        <img
+                                            src="https://picsum.photos/200?random=200"
+                                            alt="Preview"
+                                        >
+                                    </figure>
+                                    <div class="article-preview">
+                                        <h2>TaskFlow</h2>
+                                        <p>
+                                           Una plataforma intuitiva para organizar y gestionar tareas diarias con funciones de arrastrar y soltar, etiquetas personalizadas y recordatorios. Construida con React para una experiencia dinámica y responsive, y con backend en Node.js para sincronización en tiempo real.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>            
+                                    <figure>
+                                        <img
+                                            src="https://picsum.photos/200?random=201"
+                                            alt="Preview"
+                                        >
+                                    </figure>
+                                    <div class="article-preview">
+                                        <h2>EcoShop</h2>
+                                        <p>
+                                           Tienda virtual especializada en productos ecológicos y sostenibles. Implementa un diseño minimalista con un sistema de carrito de compras eficiente, filtros avanzados y pasarela de pago segura. Desarrollado con Vue.js y Firebase para almacenamiento en la nube.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>
+                                    <figure>
+                                        <img
+                                            src="https://picsum.photos/200?random=203"
+                                            alt="Preview"
+                                        >
+                                    </figure>
+                                    <div class="article-preview">
+                                        <h2>FitTrack</h2>
+                                        <p>
+                                           Aplicación móvil web que permite a los usuarios registrar rutinas de ejercicio, progreso y metas. Incluye gráficos interactivos y consejos personalizados basados en IA. Creada con React Native y un backend en Django REST Framework.
+                                        </p>
+                                    </div>
+                                </article>
+                                <article>            
+                                    <figure>
+                                        <img
+                                            src="https://picsum.photos/200?random=204"
+                                            alt="Preview"
+                                        >
+                                    </figure>
+                                    <div class="article-preview">
+                                        <h2>TravelMate</h2>
+                                        <p>
+                                            Web app que ofrece recomendaciones personalizadas de destinos, itinerarios y actividades según intereses y clima. Presenta mapas interactivos y reservas integradas. Desarrollada con Angular y utiliza APIs públicas para datos. 
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+    </section>
+
+    <section id="contacto" class="section">
+      <h2>Contacto</h2>
+      <div class="carta3">
+        <form id="contactForm" novalidate>
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" placeholder="Tu nombre" required />
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="Tu email" required />
+
+          <label for="message">Mensaje:</label>
+          <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+
+          <button type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Emanuel Kek</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
